@@ -4,9 +4,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Movie Form</title>
 </head>
 <body>
 
+<h1>Submit Movies Here!</h1>
+
+<form action="">
+  <label for="MovieTitle">Movie Title</label>
+  <input type="text" name="MovieTitle" id="MovieTitle">
+  <label for="Rating">Rating</label>
+  <input type="text" name="Rating" id="Rating">
+  <button>Add Movie</button>
+
+  <div id="movieContainer">
+    <ul id="movieList"></ul>
+  </div>
+
+
+</form>
+  <script src="https://unpkg.com/jquery"></script>
+  <script>
+
+    function addMovie (e) {
+      e.preventDefault();
+      const $movieTitle = $('#MovieTitle').val();
+      const $rating = $('#Rating').val();
+      const $newMovie = $('<li>');
+      $newMovie.text(`${$movieTitle} ${$rating}`);
+      $('#movieList').append($newMovie);
+    }
+
+    $('button').on('click', addMovie);
+
+
+
+
+  </script>
 </body>
 </html>
