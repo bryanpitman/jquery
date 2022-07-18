@@ -75,6 +75,23 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+
+  function changeColor () {
+    let $red = $('.form-control').eq(0).val();
+    let $blue = $('.form-control').eq(1).val();
+    let $green = $('.form-control').eq(2).val();
+    let $color = `rgb(${$red},${$blue},${$green})`;
+    let $body = $('body');
+    $body.css('backgroundColor',$color)
+  }
+
+  $("body").on('change',changeColor);
+
+
+  $('img').on('click', function (e) {
+    $(e.target).remove();
+  });
+
 </script>
 </body>
 
