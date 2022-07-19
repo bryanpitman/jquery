@@ -33,11 +33,18 @@
       const $newMovie = $('<li>');
       $newMovie.text(`${$movieTitle} ${$rating}`);
       $('#movieList').append($newMovie);
+      $("form").trigger("reset")
     }
 
     $('button').on('click', addMovie);
 
+    // function delMovie(e){
 
+
+      $("ul").on("click", "li", function(e){
+        $(e.target).remove();
+      })
+    // }
 
 
   </script>
